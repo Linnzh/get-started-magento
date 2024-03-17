@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Magento2PluginSettings">
+    <option name="pluginEnabled" value="true" />
     <option name="defaultLicenseName" value="Proprietary" />
+    <option name="magentoPath" value="$PROJECT_DIR$/mage" />
+    <option name="magentoVersion" value="any" />
+    <option name="magentoEdition" value="Platform Version:" />
   </component>
 </project>
