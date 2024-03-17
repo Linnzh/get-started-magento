@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="get-started-magento" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="get-started-magento" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false" autoUploadExternalChanges="true">
+    <option name="confirmBeforeUploading" value="false" />
     <serverData>
       <paths name="get-started-magento">
         <serverdata>
           <mappings>
             <mapping deploy="/workspace/get-started-magento" local="$PROJECT_DIR$/mage" web="/" />
+            <mapping deploy="/workspace/get-started-magento" local="$PROJECT_DIR$/custom" web="/" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/mage/.github" />
