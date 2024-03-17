@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="get-started-magento" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="get-started-magento">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/workspace/get-started-magento" local="$PROJECT_DIR$/mage" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/.github" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/generated" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/var" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/README.md" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/CHANGELOG.md" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/COPYING.txt" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/LICENSE.txt" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/LICENSE_AFL.txt" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/SECURITY.md" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/.user.ini" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/.htaccess" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/.htaccess.sample" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/auth.json.sample" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/grunt-config.json.sample" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/package.json.sample" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/Gruntfile.js.sample" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/nginx.conf.sample" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mage/.php-cs-fixer.dist.php" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+  </component>
+</project>
