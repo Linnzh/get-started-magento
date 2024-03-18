@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+
+    <router id="standard">
+        <!-- 设置该模块的 Controller 路由前缀为 started -->
+        <route id="started" frontName="started">
+            <module name="Example_Started"/>
+        </route>
+    </router>
+
+</config>
