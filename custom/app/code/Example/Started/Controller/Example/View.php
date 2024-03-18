@@ -23,6 +23,9 @@ class View implements HttpGetActionInterface
     {
         // 它默认输出当前模块下 `view/frontend/layout`目录下与 Controller 同样位置的布局。
         // 拿这里的`Example\Started\Controller\Example\View`类来说，它可以对应`view/frontend/layout/example/view.xml` 布局文件
-        return $this->pageFactory->create();
+        //
+        // TODO 假设同时存在本 Controller 和 started_example_view 布局文件，访问 http://start.kyoye.com/started/example/view 时
+        // 会响应什么内容？
+        return $this->pageFactory->create()->addHandle('started_example_view2');
     }
 }

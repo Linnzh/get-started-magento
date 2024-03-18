@@ -1,0 +1,16 @@
+<h1>Hello, magento</h1>
+
+<pre>
+在 Magento 2 的 layout XML 文件中，各元素之间的关系及含义如下：
+
+1. `layout`：布局文件的根元素，所有其他元素都是 `layout` 元素的子元素。
+2. `update`：用于从其他布局文件中复制和合并块和容器。
+3. `referenceBlock`：允许对特定块的属性和子元素进行操作。
+4. `block`：用于定义和配置块，包括添加子元素和属性。
+5. `container`：与块类似，但不会渲染任何 HTML。它通常用于在布局中定义占位符，以便其他块可以在其中添加 HTML。
+6. `referenceContainer`：允许对特定容器的属性和子元素进行操作。
+7. `move`：允许将块或容器从一个父元素移动到另一个父元素中。
+8. `remove`：允许从布局中删除指定的块或容器。
+9. `arguments`：允许在块或容器中传递参数和变量。
+10. `uiComponent`：允许定义 UI 组件。
+</pre>
