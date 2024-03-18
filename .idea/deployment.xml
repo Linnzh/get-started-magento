@@ -8,6 +8,7 @@
           <mappings>
             <mapping deploy="/workspace/get-started-magento" local="$PROJECT_DIR$/mage" web="/" />
             <mapping deploy="/workspace/get-started-magento" local="$PROJECT_DIR$/custom" web="/" />
+            <mapping deploy="/etc/nginx/conf.d" local="$PROJECT_DIR$/web" web="/nginx" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/mage/.github" />
