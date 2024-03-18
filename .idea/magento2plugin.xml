@@ -4,6 +4,7 @@
     <option name="pluginEnabled" value="true" />
     <option name="defaultLicenseName" value="Proprietary" />
     <option name="magentoPath" value="$PROJECT_DIR$/mage" />
+    <option name="mftfSupportEnabled" value="true" />
     <option name="magentoVersion" value="any" />
     <option name="magentoEdition" value="Platform Version:" />
   </component>
