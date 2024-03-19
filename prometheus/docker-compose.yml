@@ -10,7 +10,7 @@ services:
     prometheus:
         image: prom/prometheus
         container_name: prometheus
-        restart: unless-stopped
+#        restart: unless-stopped
         ports:
             - "9099:9090"
         networks:
@@ -25,7 +25,7 @@ services:
     grafana:
         image: grafana/grafana
         container_name: grafana
-        restart: unless-stopped
+#        restart: unless-stopped
         ports:
             - "3333:3000"
         networks:
@@ -34,6 +34,7 @@ services:
         # use "root" user
         user: '0'
         volumes:
+            - ./grafana/etc/grafana.ini:/etc/grafana.ini
             - ./grafana/data:/var/lib/grafana
         environment:
             - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource,redis-datasource
@@ -43,7 +44,7 @@ services:
     influxdb:
         image: influxdb:alpine
         container_name: influxdb
-        restart: unless-stopped
+#        restart: unless-stopped
         ports:
             - "8086:8086"
         networks:
