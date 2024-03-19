@@ -1,0 +1,49 @@
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+# - "first_rules.yml"
+# - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: "prometheus"
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: [ "localhost:9090" ]
+
+  ################# 修改内容 ################
+  # System monitor
+  # node_exporter: 请在需要监控的主机上安装并暴露对应的地址信息，默认端口：9100
+  # Dashboard 模板ID：16098
+  # macOS 安装：brew install node_exporter
+  #########################################
+  - job_name: "node_exporter"
+    static_configs:
+      - targets: [ "basic.linnzh.com:9100", "app.linnzh.com:9100", "cache.linnzh.com:9100", "db.linnzh.com:9100" ]
+
+  ################# 修改内容 ################
+  # MySQL monitor
+  # prometheus-mysqld-exporter: 请在需要监控的主机上安装并暴露对应的地址信息
+  # Dashboard 模板ID：11323
+  #########################################
+  - job_name: "mysql"
+    static_configs:
+      - targets: [ "db.linnzh.com:9104" ]
+    honor_labels: true

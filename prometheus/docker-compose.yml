@@ -1,0 +1,62 @@
+version: '3'
+
+networks:
+    monitor:
+        driver: bridge
+
+services:
+
+    # link: https://prometheus.io/docs/prometheus/latest/installation/
+    prometheus:
+        image: prom/prometheus
+        container_name: prometheus
+        restart: unless-stopped
+        ports:
+            - "9099:9090"
+        networks:
+            - monitor
+        working_dir: /prometheus
+        volumes:
+            - ./prometheus/etc/prometheus.yml:/etc/prometheus/prometheus.yml:rw
+            - ./prometheus/data:/prometheus:rw
+
+    # link: https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/
+    # Template ID：16098(node_exporter), 11323(mysql)
+    grafana:
+        image: grafana/grafana
+        container_name: grafana
+        restart: unless-stopped
+        ports:
+            - "3333:3000"
+        networks:
+            - monitor
+        working_dir: /var/lib/grafana
+        # use "root" user
+        user: '0'
+        volumes:
+            - ./grafana/data:/var/lib/grafana
+        environment:
+            - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource,redis-datasource
+
+    # link: https://hub.docker.com/influxdb
+    # https://docs.influxdata.com/influxdb/v2/get-started/setup/
+    influxdb:
+        image: influxdb:alpine
+        container_name: influxdb
+        restart: unless-stopped
+        ports:
+            - "8086:8086"
+        networks:
+            - monitor
+        working_dir: /
+        volumes:
+            - ./influxdb/scripts:/docker-entrypoint-initdb.d:rw
+            - ./influxdb/data:/var/lib/influxdb2:rw
+            - ./influxdb/config:/etc/influxdb2:rw
+        environment:
+            - DOCKER_INFLUXDB_INIT_MODE=setup
+            - DOCKER_INFLUXDB_INIT_USERNAME=linnzh
+            - DOCKER_INFLUXDB_INIT_PASSWORD=linnzh@1996
+            - DOCKER_INFLUXDB_INIT_ORG=freedom
+            # - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=r5Fgu-wg9yDVjBSukWNaLD3RgtZ1P9ZNxcRekMtk8PjLemqamT1zg_qm5mei5uTrBBNFgpE_KTGSKVnLc2jKig==
+            - DOCKER_INFLUXDB_INIT_BUCKET=monitor-bucket
