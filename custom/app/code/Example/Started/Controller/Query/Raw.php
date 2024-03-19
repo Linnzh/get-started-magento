@@ -28,8 +28,7 @@ class Raw implements HttpGetActionInterface
     public function execute()
     {
         $select = $this->connection->select()
-            ->from('catalog_category_entity')
-            ->columns(['entity_id', 'path'])
+            ->from('catalog_category_entity', ['entity_id', 'path'])
             ->order('entity_id DESC')
             ->limitPage(1, 20);
 
