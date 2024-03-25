@@ -1,0 +1,13 @@
+### Get category by id
+#@no-log
+GRAPHQL https://start.kyoye.com/graphql
+
+query getCategoryById($id: Int = 2) {
+  getCategoryById(id: $id) {
+    entity_id name
+  }
+}
+
+{
+    "id": 2
+}
