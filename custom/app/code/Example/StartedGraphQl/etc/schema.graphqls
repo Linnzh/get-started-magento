@@ -1,0 +1,8 @@
+type Query {
+    getCategoryById(id: Int!): CategoryItem @resolver(class: "Example\\StartedGraphQl\\Model\\Resolver\\GetCategoryById") @doc(description: "根据分类ID查询分类详情")
+}
+
+type CategoryItem {
+    name: String @doc(description: "Category Name")
+    entity_id: Int @doc(description: "Category ID")
+}
