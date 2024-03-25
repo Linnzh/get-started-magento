@@ -1,0 +1,21 @@
+{
+    "name": "example/module-started-graph-ql",
+    "version": "1.0.0",
+    "description": "Graph QL example.",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "example/module-started": "1.0.*"
+    },
+    "license": [
+        "GNU General Public License (GPL)"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Example\\StartedGraphQl\\": ""
+        }
+    }
+}
